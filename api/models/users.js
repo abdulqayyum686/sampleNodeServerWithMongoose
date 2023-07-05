@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 
-const querySchema = mongoose.Schema({
-  subject: {
-    type: String,
-    required: true,
-  },
+const userSchema = mongoose.Schema({
   email: {
     type: String,
     required: true,
   },
-  message: {
+  version: {
     type: String,
     required: true,
-  }
+  },
+  password: {
+    type: String,
+    required: true,
+  },
 });
 
-module.exports = mongoose.model("Query", querySchema);
+module.exports = mongoose.model("Users", userSchema);

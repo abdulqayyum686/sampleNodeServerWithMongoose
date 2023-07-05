@@ -9,7 +9,7 @@ dotenv.config();
 
 mongoose
   .connect(
-    "mongodb+srv://abdul:123@cluster0.7tkjp.mongodb.net/ansaMedia?retryWrites=true&w=majority",
+    "mongodb+srv://qayyum:123@cluster0.7bdsppb.mongodb.net/HCIAssignment",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -39,9 +39,11 @@ app.use(function (req, res, next) {
   next();
 });
 console.log("ok2");
-const queryRouterFile = require("./api/routes/query");
+const queryRouterFile = require("./api/routes/users");
+const taskRouterFile = require("./api/routes/task");
 
 app.use("/user", queryRouterFile.router);
+app.use("/task", taskRouterFile.router);
 
 app.use("/hello", (req, res, next) => {
   console.log("ok");
